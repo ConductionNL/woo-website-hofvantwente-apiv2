@@ -1,0 +1,16 @@
+[
+    {
+      "items": [
+        {
+          "label": "Telefoon",
+          "ariaLabel": "Phone number",
+          "value": "0547-858585",
+          "link": "tel:0547858585"
+        },
+        {
+          "ariaLabel": "Adress",
+          "value": "De Höfte 7, 7471 DK Goor"
+        }
+      ]
+    }
+  ]
