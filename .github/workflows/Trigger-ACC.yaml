@@ -11,7 +11,7 @@ jobs:
     env:
       DOMEINNAAM: ${{ secrets.DOMEINNAAM_ACC }}
       INLOG: ${{ secrets.INLOG }}
-      WACHTWOORD: ${{ secrets.WACHTWOORD }}
+      WACHTWOORD: ${{ secrets.WACHTWOORD_ACC }}
       APP: ${{ secrets.APP }}
       ENDPOINT: ${{ secrets.ENDPOINT }}
     steps:
