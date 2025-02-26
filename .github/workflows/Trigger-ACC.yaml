@@ -15,8 +15,7 @@ jobs:
       APP: ${{ secrets.APP }}
       ENDPOINT: ${{ secrets.ENDPOINT_ACC }}
     steps:
-      - name: Debug URL
-        run: echo "Triggering API call at: https://${DOMEINNAAM}/index.php/apps/${APP}${ENDPOINT}"
+     
       - name: Trigger Call ACC
         run: |
           curl -v -X POST \
