@@ -1,0 +1,21 @@
+name: Trigger Call API
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger_api:
+    runs-on: ubuntu-latest
+    env:
+      DOMEINNAAM: ${{ secrets.DOMEINNAAM-acc }}
+      INLOG: ${{ secrets.INLOG }}
+      WACHTWOORD: ${{ secrets.WACHTWOORD }}
+      APP: ${{ secrets.APP }}
+      ENDPOINT: ${{ secrets.ENDPOINT }}
+    steps:
+      - name: Trigger Call
+        run: |
+          echo "Triggering API call at: https://${DOMEINNAAM-acc}/index.php/apps/${APP}${ENDPOINT}"
+          curl -X POST -u "${INLOG}:${WACHTWOORD}" "https://${DOMEINNAAM-acc}/index.php/apps/${APP}${ENDPOINT}"
