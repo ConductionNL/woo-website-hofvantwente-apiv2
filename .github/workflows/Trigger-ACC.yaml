@@ -13,9 +13,13 @@ jobs:
       INLOG: ${{ secrets.INLOG }}
       WACHTWOORD: ${{ secrets.WACHTWOORD_ACC }}
       APP: ${{ secrets.APP }}
-      ENDPOINT: ${{ secrets.ENDPOINT }}
+      ENDPOINT: ${{ secrets.ENDPOINT_ACC }}
     steps:
+      - name: Debug URL
+        run: echo "Triggering API call at: https://${DOMEINNAAM}/index.php/apps/${APP}${ENDPOINT}"
       - name: Trigger Call ACC
         run: |
-          echo "Triggering API call at: https://${DOMEINNAAM-acc}/index.php/apps/${APP}${ENDPOINT_ACC}"
-          curl -X POST -u "${INLOG}:${WACHTWOORD}" "https://${DOMEINNAAM-acc}/index.php/apps/${APP}${ENDPOINT_ACC}"
+          curl -v -X POST \
+            -u "${INLOG}:${WACHTWOORD}" \
+            -H "OCS-APIRequest: true" \
+            "https://${DOMEINNAAM}/index.php/apps/${APP}${ENDPOINT}"
