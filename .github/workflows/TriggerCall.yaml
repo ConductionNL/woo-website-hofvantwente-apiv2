@@ -13,7 +13,7 @@ jobs:
       INLOG: ${{ secrets.INLOG }}
       WACHTWOORD: ${{ secrets.WACHTWOORD }}
       APP: ${{ secrets.APP }}
-      ENDPOINT: ${{ secrets.ENDPOINT_ACC }}
+      ENDPOINT: ${{ secrets.ENDPOINT}}
     steps:
      
       - name: Trigger Call
